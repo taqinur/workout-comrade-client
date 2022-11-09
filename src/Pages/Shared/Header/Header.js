@@ -1,5 +1,6 @@
 import { Button, Navbar } from 'flowbite-react';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
@@ -21,18 +22,18 @@ const Header = () => {
                 </Navbar.Brand>
                 <div className="flex text-2xl md:order-2">
                     <Button>
-                        Login / Signup
+                        <Link to={'/login'}>
+                        Login / SignUp
+                        </Link>
                     </Button>
                     <Navbar.Toggle />
                 </div>
                 <Navbar.Collapse>
-                    <Navbar.Link
-                        href="/navbars"
-                        active={true}
+                    <Link to={'/'}
                         className="text-lg"
                     >
                         Home
-                    </Navbar.Link>
+                    </Link>
                     <Navbar.Link href="/navbars" className="text-lg">
                         About
                     </Navbar.Link>
