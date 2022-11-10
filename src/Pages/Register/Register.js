@@ -11,6 +11,7 @@ const Register = () => {
     const handleSubmit = event => {
         event.preventDefault();
         const form = event.target;
+        console.log('clicked',form);
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
@@ -32,7 +33,7 @@ const Register = () => {
     return (
         <div className="max-w-sm mx-auto my-16">
             <Card>
-                <form className="flex flex-col gap-4">
+                <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                     <div>
                         <div className="mb-2 block">
                             <Label
@@ -74,7 +75,7 @@ const Register = () => {
                             required={true}
                         />
                     </div>
-                    <Button onClick={handleSubmit} type="submit">
+                    <Button  type="submit">
                         Submit
                     </Button>
                     <h6 className='mt-2'>Already have an account? <Link to={'/login'}> <span className='text-blue-700'>Log In here</span> </Link></h6>

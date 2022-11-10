@@ -75,7 +75,7 @@ const Login = () => {
                             />
                         </div>
                         <TextInput
-                            id="email1"
+                            id="email"
                             type="email"
                             placeholder="name@flowbite.com"
                             required={true}
@@ -89,7 +89,7 @@ const Login = () => {
                             />
                         </div>
                         <TextInput
-                            id="password1"
+                            id="password"
                             type="password"
                             required={true}
                         />
