@@ -4,7 +4,7 @@ import React from 'react';
 const FooterBar = () => {
     return (
         <div>
-            <Footer container={true} className="bg-green-300 py-6">
+            <Footer container={true} className="bg-green-200 py-6">
                 
                 <Footer.LinkGroup>
                     <Footer.Link href="#" className="text-lg text-black px-5">

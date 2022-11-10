@@ -4,8 +4,6 @@ import { FaGoogle, FaGithub } from "react-icons/fa";
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import { Button, Card, Label, TextInput } from 'flowbite-react';
-import ButtonGroup from 'flowbite-react/lib/esm/components/ButtonGroup';
-
 
 
 const Login = () => {
@@ -66,8 +64,8 @@ const Login = () => {
 
         <div className="max-w-sm mx-auto my-12">
             <Card>
-                <form className="flex flex-col gap-4">
-                    <div>
+                <form onSubmit={handleSubmit}  className="flex flex-col gap-4">
+                    <div className='form-control'>
                         <div className="mb-2 block">
                             <Label
                                 htmlFor="email1"
@@ -75,26 +73,27 @@ const Login = () => {
                             />
                         </div>
                         <TextInput
+                        name='email'
                             id="email"
                             type="email"
                             placeholder="name@flowbite.com"
                             required={true}
                         />
                     </div>
-                    <div>
+                    <div className='form-control'>
                         <div className="mb-2 block">
                             <Label
                                 htmlFor="password1"
                                 value="Your password"
                             />
                         </div>
-                        <TextInput
+                        <TextInput name='password'
                             id="password"
                             type="password"
                             required={true}
                         />
                     </div>
-                    <Button onClick={handleSubmit} type="submit">
+                    <Button className='form-control' type="submit">
                         Submit
                     </Button>
                     <h6 className='mt-2'>Do not have an account? <Link to={'/register'}><span className='text-blue-700'>Register here</span></Link></h6>

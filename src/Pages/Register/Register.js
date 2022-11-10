@@ -34,48 +34,48 @@ const Register = () => {
         <div className="max-w-sm mx-auto my-16">
             <Card>
                 <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-                    <div>
+                    <div className='form-control'>
                         <div className="mb-2 block">
                             <Label
                                 htmlFor="name1"
                                 value="Your Name"
                             />
                         </div>
-                        <TextInput
+                        <TextInput name='name'
                             id="name"
                             type="name"
                             placeholder="Enter Your Name"
                             required={true}
                         />
                     </div>
-                    <div>
+                    <div className='form-control'>
                         <div className="mb-2 block">
                             <Label
                                 htmlFor="email1"
                                 value="Your email"
                             />
                         </div>
-                        <TextInput
+                        <TextInput name='email'
                             id="email1"
                             type="email"
                             placeholder="Your Email"
                             required={true}
                         />
                     </div>
-                    <div>
+                    <div className='form-control'>
                         <div className="mb-2 block">
                             <Label
                                 htmlFor="password1"
                                 value="Your password"
                             />
                         </div>
-                        <TextInput
+                        <TextInput name='password'
                             id="password1"
                             type="password"
                             required={true}
                         />
                     </div>
-                    <Button  type="submit">
+                    <Button className='form-control' type="submit">
                         Submit
                     </Button>
                     <h6 className='mt-2'>Already have an account? <Link to={'/login'}> <span className='text-blue-700'>Log In here</span> </Link></h6>

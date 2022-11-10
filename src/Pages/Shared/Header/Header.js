@@ -8,7 +8,7 @@ const Header = () => {
             <Navbar
                 fluid={true}
                 rounded={true}
-                className="bg-green-300 py-10"
+                className="bg-green-200 py-8"
             >
                 <Navbar.Brand>
                     <img
@@ -29,13 +29,17 @@ const Header = () => {
                     <Navbar.Toggle />
                 </div>
                 <Navbar.Collapse>
-                    <Link to={'/'}
+                <Navbar.Link
                         className="text-lg"
                     >
+                        <Link to={'/'}>
                         Home
-                    </Link>
-                    <Navbar.Link href="/navbars" className="text-lg">
+                        </Link>
+                    </Navbar.Link>
+                    <Navbar.Link className="text-lg">
+                    <Link to={'/about'}>
                         About
+                        </Link>
                     </Navbar.Link>
                     <Navbar.Link href="/navbars" className="text-lg">
                         Services
@@ -43,8 +47,10 @@ const Header = () => {
                     <Navbar.Link href="/navbars" className="text-lg">
                         Pricing
                     </Navbar.Link>
-                    <Navbar.Link href="/navbars" className="text-lg">
+                    <Navbar.Link className="text-lg">
+                    <Link to={'/blog'}>
                         Blog
+                        </Link>
                     </Navbar.Link>
                 </Navbar.Collapse>
             </Navbar>
