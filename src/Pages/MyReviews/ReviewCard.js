@@ -4,15 +4,7 @@ import { FaWindowClose } from 'react-icons/fa';
 
 const ReviewCard = ({ reviewc }) => {
     const {serviceName , userRating, review} = reviewc;
-    const handleDelete = id =>{
-        fetch(`http://localhost:5000/reviews/${id}`,{
-            method: 'DELETE'
-        })
-        .then(res => res.json())
-        .then(data => {
-
-        })
-    }
+    
     return (
         <>
         {
@@ -27,7 +19,7 @@ const ReviewCard = ({ reviewc }) => {
             <p className="font-normal text-green-700 dark:text-gray-400">
                 Rating: {userRating}
             </p>
-            <Button onClick={handleDelete}><FaWindowClose></FaWindowClose> Delete</Button>
+            <Button><FaWindowClose></FaWindowClose> Delete</Button>
             
         </Card>
         :<>
