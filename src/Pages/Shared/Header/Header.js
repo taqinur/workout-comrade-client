@@ -4,16 +4,16 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 const Header = () => {
-    const {user, logOut} = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
 
-    const handleLogOut = ()=>{
+    const handleLogOut = () => {
         logOut()
-        .then( ()=> {})
-        .catch(error => console.error(error))
+            .then(() => { })
+            .catch(error => console.error(error))
     }
     return (
-        <div 
-        className="m-4">
+        <div
+            className="m-4">
             <Navbar
                 fluid={true}
                 rounded={true}
@@ -29,44 +29,51 @@ const Header = () => {
                     </span>
                 </Navbar.Brand>
                 <div className="flex text-2xl md:order-2">
-                    
+
                     {user ?
-                <>
-                <Link className='mx-2 text-decoration-none text-xl'>{user?.displayName}
-                </Link>
+                        <>
+                            <Link className='mx-2 text-decoration-none text-xl'>{user?.displayName}
+                            </Link>
                             <Button onClick={logOut}>Logout</Button>
-                </>
-                : <><Button>
-                <Link to={'/login'}>
-                Login / SignUp
-                </Link>
-            </Button></>
-                }
+                        </>
+                        : <><Button>
+                            <Link to={'/login'}>
+                                Login / SignUp
+                            </Link>
+                        </Button></>
+                    }
 
                     <Navbar.Toggle />
                 </div>
                 <Navbar.Collapse>
-                <Navbar.Link
+                    <Navbar.Link
                         className="text-lg"
                     >
                         <Link to={'/'}>
-                        Home
-                        </Link>
-                    </Navbar.Link>
-                    <Navbar.Link className="text-lg">
-                    <Link to={'/about'}>
-                        About
+                            Home
                         </Link>
                     </Navbar.Link>
                     <Navbar.Link className="text-lg">
                         <Link to={'/services'}> Services </Link>
                     </Navbar.Link>
+                    {user ?
+                        <>
+                            <Navbar.Link className="text-lg">
+                                <Link to={'/my-reviews'}>
+                                    My Reviews
+                                </Link>
+                            </Navbar.Link>
+                            <Navbar.Link className="text-lg">
+                                <Link to={'/add-service'}>
+                                    Add Service
+                                </Link>
+                            </Navbar.Link>
+                        </>
+                        : <></>
+                    }
                     <Navbar.Link className="text-lg">
-                        Pricing
-                    </Navbar.Link>
-                    <Navbar.Link className="text-lg">
-                    <Link to={'/blog'}>
-                        Blog
+                        <Link to={'/blog'}>
+                            Blog
                         </Link>
                     </Navbar.Link>
                 </Navbar.Collapse>

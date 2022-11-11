@@ -3,13 +3,14 @@ import React from 'react';
 
 const Blog = () => {
     return (
-        <Accordion className='my-12 mx-10'>
+        <div className='py-6 bg-green-200'>
+            <Accordion className='my-12 mx-10'>
             <Accordion.Panel>
                 <Accordion.Title>
                     Difference between SQL and NoSQL?
                 </Accordion.Title>
                 <Accordion.Content>
-                    <p className="mb-2 text-gray-500 dark:text-gray-400">
+                    <p className="mb-2 text-gray-700 dark:text-gray-400">
                         1. A SQL, or relational, database enables us to store and access data with clearly defined relations; in other words, each item in a table is connected to the others in some capacity. <br />
                         With a non-relational database, data is not beholden to relationships. A non-relational database is typically much more flexible than its relational counterpart.
                     </p>
@@ -70,6 +71,7 @@ const Blog = () => {
                 </Accordion.Content>
             </Accordion.Panel>
         </Accordion>
+        </div>
     );
 };
 
