@@ -10,12 +10,12 @@ const Services = () => {
         .then(data => setServices(data))
     },[])
     return (
-        <div>
+        <div className='bg-green-200 py-6'>
         <div>
             <p className="text-5xl text-center mt-10 font-bold text-green-700">Most Popular Services</p>
             <p className='text-center mt-3 font-semibold text-violet-600'>Get in shape with a totally customizable intensive workout program <br />Only Available for YOU!</p>
         </div>
-        <div className='grid gap-7 grid-cols-1 md:grid-cols-3'>
+        <div className='grid gap-5 grid-cols-1 md:grid-cols-3'>
             {
                 services.map(service => <ServiceCard
                 key={service._id}

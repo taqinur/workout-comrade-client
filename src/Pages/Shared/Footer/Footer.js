@@ -3,9 +3,8 @@ import React from 'react';
 
 const FooterBar = () => {
     return (
-        <div>
-            <Footer container={true} className="bg-green-200 py-6">
-                
+        <div className="my-auto mx-6">
+            <Footer container={true}>                
                 <Footer.LinkGroup>
                     <Footer.Link href="#" className="text-lg text-black px-5">
                         About

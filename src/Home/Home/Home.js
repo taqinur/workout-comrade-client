@@ -5,8 +5,8 @@ import Services from '../Services/Services';
 
 const Home = () => {
   return (
-      <div className="w-full h-auto my-6">
-        <Card imgSrc="https://i.ibb.co/y58H87T/banner1.jpg">
+      <div className="w-full py-4 h-auto my-6 bg-green-200">
+        <Card imgSrc="https://i.ibb.co/y58H87T/banner1.jpg" className='w-9/12 m-auto'>
           <h5 className="text-4xl font-bold tracking-tight text-center text-red-500 dark:text-white">
           Join The Comrade for The Absolute Transformation!!
           </h5>

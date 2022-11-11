@@ -12,11 +12,11 @@ const Header = () => {
         .catch(error => console.error(error))
     }
     return (
-        <div>
+        <div 
+        className="m-4">
             <Navbar
                 fluid={true}
                 rounded={true}
-                className="bg-green-200 py-8"
             >
                 <Navbar.Brand>
                     <img
@@ -24,7 +24,7 @@ const Header = () => {
                         className="mr-3 h-6 sm:h-9"
                         alt="Flowbite Logo"
                     />
-                    <span className="self-center whitespace-nowrap text-3xl font-semibold dark:text-white">
+                    <span className="self-center whitespace-nowrap text-3xl text-violet-800 font-semibold dark:text-white">
                         Workout Comrade
                     </span>
                 </Navbar.Brand>
@@ -58,10 +58,10 @@ const Header = () => {
                         About
                         </Link>
                     </Navbar.Link>
-                    <Navbar.Link href="/navbars" className="text-lg">
-                        Services
+                    <Navbar.Link className="text-lg">
+                        <Link to={'/services'}> Services </Link>
                     </Navbar.Link>
-                    <Navbar.Link href="/navbars" className="text-lg">
+                    <Navbar.Link className="text-lg">
                         Pricing
                     </Navbar.Link>
                     <Navbar.Link className="text-lg">

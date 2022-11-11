@@ -76,7 +76,7 @@ const Login = () => {
                         name='email'
                             id="email"
                             type="email"
-                            placeholder="name@flowbite.com"
+                            placeholder="Your Email"
                             required={true}
                         />
                     </div>
