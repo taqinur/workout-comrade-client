@@ -7,11 +7,14 @@ const PrivateRoute = ({children}) => {
 
     const {user, loading} = useContext(AuthContext);
     const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
+
     if (loading){
         <h2 className='text-5xl text-center font-semibold'>Loading... <br /> <Spinner aria-label="Default status example" /></h2>
     }
     if(!user){
-        return <Navigate to="/login" state={{from:location}} replace></Navigate>
+        return <Navigate to="/login" 
+        state={{ from:location}} replace></Navigate>
     }
     return children;
     

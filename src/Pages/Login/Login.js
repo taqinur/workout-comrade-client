@@ -62,7 +62,8 @@ const Login = () => {
 
     return (
 
-        <div className="max-w-sm mx-auto my-12">
+        <div className='py-6 bg-green-200'>
+            <div className="max-w-sm mx-auto my-3">
             <Card>
                 <form onSubmit={handleSubmit}  className="flex flex-col gap-4">
                     <div className='form-control'>
@@ -105,6 +106,7 @@ const Login = () => {
                     <p className='text-red-700'>{error.slice(22, -2)}</p>
                 </form>
             </Card>
+        </div>
         </div>
     );
 };

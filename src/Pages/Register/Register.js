@@ -11,7 +11,7 @@ const Register = () => {
     const handleSubmit = event => {
         event.preventDefault();
         const form = event.target;
-        console.log('clicked',form);
+        console.log('clicked', form);
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
@@ -31,57 +31,59 @@ const Register = () => {
             });
     }
     return (
-        <div className="max-w-sm mx-auto my-16">
-            <Card>
-                <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-                    <div className='form-control'>
-                        <div className="mb-2 block">
-                            <Label
-                                htmlFor="name1"
-                                value="Your Name"
+        <div className='py-6 bg-green-200'>
+            <div className="max-w-sm mx-auto my-6">
+                <Card>
+                    <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                        <div className='form-control'>
+                            <div className="mb-2 block">
+                                <Label
+                                    htmlFor="name1"
+                                    value="Your Name"
+                                />
+                            </div>
+                            <TextInput name='name'
+                                id="name"
+                                type="name"
+                                placeholder="Enter Your Name"
+                                required={true}
                             />
                         </div>
-                        <TextInput name='name'
-                            id="name"
-                            type="name"
-                            placeholder="Enter Your Name"
-                            required={true}
-                        />
-                    </div>
-                    <div className='form-control'>
-                        <div className="mb-2 block">
-                            <Label
-                                htmlFor="email1"
-                                value="Your email"
+                        <div className='form-control'>
+                            <div className="mb-2 block">
+                                <Label
+                                    htmlFor="email1"
+                                    value="Your email"
+                                />
+                            </div>
+                            <TextInput name='email'
+                                id="email1"
+                                type="email"
+                                placeholder="Your Email"
+                                required={true}
                             />
                         </div>
-                        <TextInput name='email'
-                            id="email1"
-                            type="email"
-                            placeholder="Your Email"
-                            required={true}
-                        />
-                    </div>
-                    <div className='form-control'>
-                        <div className="mb-2 block">
-                            <Label
-                                htmlFor="password1"
-                                value="Your password"
+                        <div className='form-control'>
+                            <div className="mb-2 block">
+                                <Label
+                                    htmlFor="password1"
+                                    value="Your password"
+                                />
+                            </div>
+                            <TextInput name='password'
+                                id="password1"
+                                type="password"
+                                required={true}
                             />
                         </div>
-                        <TextInput name='password'
-                            id="password1"
-                            type="password"
-                            required={true}
-                        />
-                    </div>
-                    <Button className='form-control' type="submit">
-                        Submit
-                    </Button>
-                    <h6 className='mt-2'>Already have an account? <Link to={'/login'}> <span className='text-blue-700'>Log In here</span> </Link></h6>
-                    <p className='text-red-700'>{error.slice(22, -2)}</p>
-                </form>
-            </Card>
+                        <Button className='form-control' type="submit">
+                            Submit
+                        </Button>
+                        <h6 className='mt-2'>Already have an account? <Link to={'/login'}> <span className='text-blue-700'>Log In here</span> </Link></h6>
+                        <p className='text-red-700'>{error.slice(22, -2)}</p>
+                    </form>
+                </Card>
+            </div>
         </div>
     );
 };
