@@ -1,14 +1,18 @@
-import { Button } from 'flowbite-react';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import ServiceCard from './ServiceCard';
+import { useQuery } from '@tanstack/react-query';
+import Loading from '../../Pages/Loading/Loading';
 
 const Services = () => {
-    const [services, setServices] = useState([]);
-    useEffect( ()=>{
-        fetch('https://workout-comrade-server.vercel.app/services')
-        .then(res => res.json())
-        .then(data => setServices(data))
-    },[])
+    const { data: services, isLoading, refetch } = useQuery({
+        queryKey: ('title'),
+        queryFn: () => fetch('https://workout-comrade-server.vercel.app/services')
+          .then(res => res.json())
+      })
+
+      if (isLoading){
+        return <Loading></Loading> ;
+      }
     return (
         <div className='bg-green-200 py-6'>
         <div>
@@ -17,10 +21,11 @@ const Services = () => {
         </div>
         <div className='grid gap-5 grid-cols-1 md:grid-cols-3'>
             {
-                services.map(service => <ServiceCard
+                services?.map(service => <ServiceCard
                 key={service._id}
                 service={service}
-                ></ServiceCard>)
+                >refetch();</ServiceCard>
+                )
             }
         </div>
         </div>

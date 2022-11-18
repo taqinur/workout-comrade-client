@@ -12,44 +12,44 @@ import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
-      path: '/',
-      element: <Main></Main>,
-      children: [
-        {
-            path: '/',
-            element: <Home></Home>
-        },
-        {
-            path: '/blog',
-            element:<Blog></Blog>
-        },
-        {
-            path: '/login',
-            element:<Login></Login>
-        },
-        {
-            path: '/register',
-            element:<Register></Register>
-        },
-        {
-            path: '/services',
-            element:<Services></Services>
-        },
-        {
-            path: '/services/:id',
-            element:<ServiceDetails></ServiceDetails>,
-            loader: ({params})=> fetch(`https://workout-comrade-server.vercel.app/services/${params.id}`)
-        },
-        {
-            path: '/my-reviews',
-            element:<PrivateRoute><MyReviews></MyReviews></PrivateRoute>
-        },
-        {
-            path: '/add-service',
-            element: <PrivateRoute><AddService></AddService></PrivateRoute>
-        }
-      ]
+        path: '/',
+        element: <Main></Main>,
+        children: [
+            {
+                path: '/',
+                element: <Home></Home>
+            },
+            {
+                path: '/blog',
+                element: <Blog></Blog>
+            },
+            {
+                path: '/login',
+                element: <Login></Login>
+            },
+            {
+                path: '/register',
+                element: <Register></Register>
+            },
+            {
+                path: '/services',
+                element: <Services></Services>
+            },
+            {
+                path: '/services/:id',
+                element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>,
+                loader: ({ params }) => fetch(`https://workout-comrade-server.vercel.app/services/${params.id}`)
+            },
+            {
+                path: '/my-reviews',
+                element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>
+            },
+            {
+                path: '/add-service',
+                element: <PrivateRoute><AddService></AddService></PrivateRoute>
+            }
+        ]
     }
-  ]);
+]);
 
-  export default router;
+export default router;
