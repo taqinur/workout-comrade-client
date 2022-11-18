@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react';
 import {createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut} from 'firebase/auth';
 import app from '../../firebase/firebase.init';
+import Loading from '../../Pages/Loading/Loading';
 
 export const AuthContext = createContext();
 const auth = getAuth(app);
@@ -37,6 +38,10 @@ const AuthProvider = ({children}) => {
             return unsubscribe();
         }
     },[])
+
+    if (loading){
+        return <Loading></Loading>;
+    }
 
     const authInfo = { user, providerLogin, logOut, createUser, logIn, loading };
     return (

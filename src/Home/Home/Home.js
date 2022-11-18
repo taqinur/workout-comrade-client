@@ -8,7 +8,7 @@ import Loading from '../../Pages/Loading/Loading';
 const Home = () => {
 
   const { data: services, isLoading } = useQuery({
-    queryKey: ('title'),
+    queryKey: ['title'],
     queryFn: () => fetch('https://workout-comrade-server.vercel.app/services')
       .then(res => res.json())
   })

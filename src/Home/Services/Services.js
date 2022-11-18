@@ -5,7 +5,7 @@ import Loading from '../../Pages/Loading/Loading';
 
 const Services = () => {
     const { data: services, isLoading, refetch } = useQuery({
-        queryKey: ('title'),
+        queryKey: ['title'],
         queryFn: () => fetch('https://workout-comrade-server.vercel.app/services')
           .then(res => res.json())
       })
@@ -16,7 +16,7 @@ const Services = () => {
     return (
         <div className='bg-green-200 py-6'>
         <div>
-            <p className="text-5xl text-center mt-10 font-bold text-green-700">Most Popular Services</p>
+            <p className="text-5xl text-center mt-10 font-bold text-green-700">Our Services</p>
             <p className='text-center mt-3 font-semibold text-violet-600'>Get in shape with a totally customizable intensive workout program <br />Only Available for YOU!</p>
         </div>
         <div className='grid gap-5 grid-cols-1 md:grid-cols-3'>
